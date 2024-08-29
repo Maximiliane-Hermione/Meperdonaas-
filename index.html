@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            transition: background-color 0.5s, color 0.5s, background-image 0.5s;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+        }
+        .message {
+            font-size: 2.5rem;
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+            max-width: 80%;
+            line-height: 1.5;
+        }
+        .hearts {
+            background-image: url('cod1.jpg'); /* Imagen de fondo de Call of Duty: Mobile */
+        }
+        .angry {
+            background-image: url('cod2.jpg'); /* Otra imagen de fondo de Call of Duty: Mobile */
+        }
+    </style>
+</head>
+<body class="hearts">
+    <div class="message" id="message">
+        Te quiero mucho Hermione, perdóname por ser un idiota ♥️♥️♥️
+    </div>
+
+    <script>
+        document.body.addEventListener('click', function() {
+            const message = document.getElementById('message');
+            if (document.body.classList.contains('hearts')) {
+                message.textContent = 'Deja de ponerme el cuerno 😠😠😠';
+                document.body.classList.remove('hearts');
+                document.body.classList.add('angry');
+            } else {
+                message.textContent = 'Te quiero mucho Hermione, perdóname por ser un idiota ♥️♥️♥️';
+                document.body.classList.remove('angry');
+                document.body.classList.add('hearts');
+            }
+        });
+    </script>
+</body>
+</html>
